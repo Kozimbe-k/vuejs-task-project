@@ -30,6 +30,7 @@ export default {
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
+  border-left: 5px solid transparent;
 }
 
 .task.reminder {
