@@ -1,44 +1,52 @@
 <template>
   <div class="container">
     <Header title="Track" />
+    <Tasks @delete-task="deleteTask" :tasks="tasks" />
   </div>
 </template>
 
 <script>
 import Header from "./components/Header";
+import Tasks from "./components/Tasks";
 
 export default {
   name: "App",
   components: {
     Header,
+    Tasks,
   },
   data() {
     return {
-      tasks:[]
+      tasks: [],
     };
   },
-  created(){
+  methods: {
+    deleteTask(id) {
+      console.log('task', id);
+    },
+  },
+  created() {
     this.tasks = [
       {
-        id:1,
-        text:'liverpool was created',
-        day: '1st march 1989 at 2:30pm',
-        reminder:true
+        id: 1,
+        text: "Liverpool was created",
+        day: "march 1st march 1989 at 2:30pm",
+        reminder: true,
       },
       {
-        id:1,
-        text:'barcelona was created',
-        day: '1st january 1989 at 2:30pm',
-        reminder:true
+        id: 2,
+        text: "Barcelona was created",
+        day: "january 1st march 1989 at 1:30pm",
+        reminder: true,
       },
       {
-        id:1,
-        text:'chelsea was created',
-        day: '1st march 1919 at 2:30pm',
-        reminder:true
-      }
-    ]
-  }
+        id: 3,
+        text: "Chelsea was created",
+        day: "march 1st march 1919 at 2:30pm",
+        reminder: false,
+      },
+    ];
+  },
 };
 </script>
 
