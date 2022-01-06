@@ -1,16 +1,43 @@
 <template>
   <div class="container">
-    <Header  title="Track"/>
+    <Header title="Track" />
   </div>
 </template>
 
 <script>
-import Header from  './components/Header'
+import Header from "./components/Header";
 
 export default {
   name: "App",
-  components:{
-    Header
+  components: {
+    Header,
+  },
+  data() {
+    return {
+      tasks:[]
+    };
+  },
+  created(){
+    this.tasks = [
+      {
+        id:1,
+        text:'liverpool was created',
+        day: '1st march 1989 at 2:30pm',
+        reminder:true
+      },
+      {
+        id:1,
+        text:'barcelona was created',
+        day: '1st january 1989 at 2:30pm',
+        reminder:true
+      },
+      {
+        id:1,
+        text:'chelsea was created',
+        day: '1st march 1919 at 2:30pm',
+        reminder:true
+      }
+    ]
   }
 };
 </script>
